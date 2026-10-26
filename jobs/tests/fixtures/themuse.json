@@ -1,0 +1,83 @@
+{
+    "page": 0,
+    "page_count": 1,
+    "items_per_page": 20,
+    "took": 3,
+    "timed_out": false,
+    "total": 3,
+    "aggregations": {},
+    "results": [
+        {
+            "id": 22018131,
+            "name": "Junior Platform Support Engineer",
+            "short_name": "junior-platform-support-engineer",
+            "type": "external",
+            "model_type": "jobs",
+            "publication_date": "2026-08-01T18:48:50Z",
+            "contents": "<p>Support our Python and Linux platform.</p>",
+            "locations": [
+                {"name": "Flexible / Remote"},
+                {"name": "Mexico City, Mexico"}
+            ],
+            "levels": [
+                {"name": "Entry Level", "short_name": "entry"}
+            ],
+            "categories": [
+                {"name": "Software Engineering"}
+            ],
+            "tags": [],
+            "refs": {
+                "landing_page": "https://www.themuse.com/jobs/summitcore/junior-platform-support-engineer"
+            },
+            "company": {"id": 15000490, "short_name": "summitcore", "name": "Summitcore"}
+        },
+        {
+            "id": 20839023,
+            "name": "Back-end Developer - Remote Internship",
+            "short_name": "backend-developer-remote-internship",
+            "type": "external",
+            "model_type": "jobs",
+            "publication_date": "2025-12-05T14:42:34Z",
+            "contents": "<p>Build Python APIs as an intern.</p>",
+            "locations": [
+                {"name": "Flexible / Remote"}
+            ],
+            "levels": [
+                {"name": "Entry Level", "short_name": "entry"},
+                {"name": "Internship", "short_name": "internship"}
+            ],
+            "categories": [
+                {"name": "Software Engineering"}
+            ],
+            "tags": [],
+            "refs": {
+                "landing_page": "https://www.themuse.com/jobs/lanternworks/backend-developer-remote-internship"
+            },
+            "company": {"id": 15000491, "short_name": "lanternworks", "name": "Lanternworks"}
+        },
+        {
+            "id": 22018200,
+            "name": "Junior Python Developer",
+            "short_name": "junior-python-developer",
+            "type": "external",
+            "model_type": "jobs",
+            "publication_date": "2026-10-20T09:15:00Z",
+            "contents": "<p>Write Python services with Django.</p>",
+            "locations": [
+                {"name": "Flexible / Remote"},
+                {"name": "Los Angeles, CA"}
+            ],
+            "levels": [
+                {"name": "Entry Level", "short_name": "entry"}
+            ],
+            "categories": [
+                {"name": "Software Engineering"}
+            ],
+            "tags": [],
+            "refs": {
+                "landing_page": "https://www.themuse.com/jobs/tidewater/junior-python-developer"
+            },
+            "company": {"id": 15000492, "short_name": "tidewater", "name": "Tidewater"}
+        }
+    ]
+}

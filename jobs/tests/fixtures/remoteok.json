@@ -1,0 +1,41 @@
+[
+  {
+    "legal": "API terms notice"
+  },
+  {
+    "id": "1137557",
+    "date": "2026-10-22T12:58:28+00:00",
+    "position": "Senior DevOps Engineer",
+    "company": "Lemon.io",
+    "location": "",
+    "salary_min": 50000,
+    "salary_max": 150000,
+    "url": "https://remoteOK.com/remote-jobs/remote-senior-devops-engineer-lemon-io-1137557",
+    "tags": ["devops", "engineer", "python", "aws"],
+    "description": "<p>Sample description.</p>"
+  },
+  {
+    "id": "1137540",
+    "date": "2026-10-17T08:00:32+00:00",
+    "position": "Technical Account Manager",
+    "company": "Yuno",
+    "location": "Brazil",
+    "salary_min": 0,
+    "salary_max": 0,
+    "url": "https://remoteOK.com/remote-jobs/remote-technical-account-manager-yuno-1137540",
+    "tags": ["technical", "python", "sql"],
+    "description": "<p>Sample description.</p>"
+  },
+  {
+    "id": "1137563",
+    "date": "2026-10-23T16:00:18+00:00",
+    "position": "Sales Development Representative German Speaking",
+    "company": "Huzzle",
+    "location": "",
+    "salary_min": 0,
+    "salary_max": 0,
+    "url": "https://remoteOK.com/remote-jobs/remote-sales-development-representative-german-speaking-huzzle-1137563",
+    "tags": ["saas", "sales", "marketing"],
+    "description": "<p>Sample description.</p>"
+  }
+]

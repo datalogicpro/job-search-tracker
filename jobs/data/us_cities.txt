@@ -1,0 +1,316 @@
+# US cities with 100,000+ people (Census Bureau estimates, July 1, 2025),
+# taken from Wikipedia's "List of United States cities by population".
+# One city per line. Lines starting with # are skipped.
+# Names that are also places outside the US are in us_cities_ambiguous.txt.
+# Not listed: Washington (covered by the state name), Hollywood (too general).
+New York
+Los Angeles
+Chicago
+Houston
+Phoenix
+Philadelphia
+San Antonio
+San Diego
+Dallas
+Fort Worth
+Jacksonville
+Austin
+San Jose
+Charlotte
+Columbus
+Indianapolis
+San Francisco
+Seattle
+Denver
+Nashville
+Oklahoma City
+El Paso
+Las Vegas
+Boston
+Detroit
+Louisville
+Portland
+Memphis
+Baltimore
+Milwaukee
+Albuquerque
+Fresno
+Tucson
+Sacramento
+Atlanta
+Kansas City
+Mesa
+Raleigh
+Colorado Springs
+Miami
+Omaha
+Virginia Beach
+Long Beach
+Oakland
+Minneapolis
+Bakersfield
+Tulsa
+Tampa
+Aurora
+Arlington
+Wichita
+Cleveland
+New Orleans
+Henderson
+Honolulu
+Anaheim
+Orlando
+Lexington
+Stockton
+Newark
+Riverside
+Irvine
+Corpus Christi
+Santa Ana
+Cincinnati
+Greensboro
+Pittsburgh
+St. Paul
+Jersey City
+North Las Vegas
+Plano
+Gilbert
+Anchorage
+Madison
+Reno
+Chandler
+St. Louis
+Chula Vista
+Fort Wayne
+Buffalo
+Lubbock
+Laredo
+Port St. Lucie
+St. Petersburg
+Glendale
+Winston-Salem
+Irving
+Chesapeake
+Garland
+Scottsdale
+Boise
+Frisco
+Cape Coral
+McKinney
+Huntsville
+Hialeah
+Spokane
+Tacoma
+Santa Clarita
+Fremont
+Baton Rouge
+San Bernardino
+Fontana
+Modesto
+Salt Lake City
+Moreno Valley
+Worcester
+Sioux Falls
+Yonkers
+Des Moines
+Grand Prairie
+Fayetteville
+Little Rock
+Rochester
+Amarillo
+Tallahassee
+Overland Park
+Knoxville
+Augusta
+Grand Rapids
+Peoria
+Mobile
+Oxnard
+Providence
+Montgomery
+Chattanooga
+Brownsville
+Huntington Beach
+Tempe
+Akron
+Clarksville
+Fort Lauderdale
+Elk Grove
+Cary
+Newport News
+Santa Rosa
+Eugene
+Rancho Cucamonga
+Pembroke Pines
+Shreveport
+Surprise
+Fort Collins
+Murfreesboro
+Oceanside
+Garden Grove
+Springfield
+Denton
+Roseville
+Killeen
+Palmdale
+Paterson
+Corona
+Charleston
+Salinas
+Macon
+Hayward
+Lakewood
+Sunnyvale
+Bellevue
+Naperville
+Bridgeport
+Joliet
+Mesquite
+McAllen
+Olathe
+Savannah
+Gainesville
+Pasadena
+Palm Bay
+Pomona
+Waco
+Thornton
+Midland
+Rockford
+Visalia
+Escondido
+Syracuse
+Meridian
+Miramar
+Elizabeth
+Victorville
+Round Rock
+Jackson
+Stamford
+Lewisville
+Coral Springs
+New Haven
+Fullerton
+Torrance
+Orange
+Cedar Rapids
+West Valley City
+Hampton
+Warren
+Dayton
+Fargo
+Carrollton
+Sterling Heights
+Santa Clara
+Abilene
+Norman
+Pearland
+Clovis
+North Charleston
+College Station
+West Palm Beach
+Wilmington
+Allentown
+Topeka
+Lakeland
+Buckeye
+Goodyear
+Broken Arrow
+Simi Valley
+Lafayette
+Vallejo
+Concord
+Arvada
+New Braunfels
+Fairfield
+Ann Arbor
+Thousand Oaks
+Hartford
+Berkeley
+Independence
+Billings
+High Point
+Nampa
+Lowell
+League City
+Conroe
+Antioch
+Menifee
+Richardson
+Pompano Beach
+Las Cruces
+West Jordan
+Evansville
+Waterbury
+Elgin
+Greeley
+Temecula
+Provo
+Rio Rancho
+Clearwater
+Tuscaloosa
+Murrieta
+Lansing
+Tyler
+Miami Gardens
+Everett
+Allen
+Beaumont
+South Fulton
+Carlsbad
+Sparks
+Gresham
+Hillsboro
+Davie
+Edinburg
+Pueblo
+Ventura
+Palm Coast
+Edison
+Costa Mesa
+St. George
+Centennial
+Downey
+Spokane Valley
+Sugar Land
+Lee's Summit
+Bend
+Jurupa Valley
+Green Bay
+Rialto
+Brockton
+Boulder
+Carmel
+Dearborn
+West Covina
+Yuma
+Chico
+El Monte
+Sandy Springs
+Renton
+Fishers
+Woodbridge
+Lynn
+Vacaville
+San Mateo
+South Bend
+Quincy
+Burbank
+Hesperia
+Wichita Falls
+Tracy
+New Bedford
+El Cajon
+Albany
+Inglewood
+Boca Raton
+Fort Myers
+Clinton
+Daly City
+Avondale
+Toms River
+San Angelo
+Edmond
+Davenport
+Deltona
+Longmont

@@ -1,0 +1,34 @@
+{
+  "jobs": [
+    {
+      "guid": "https://himalayas.app/companies/smule-inc/jobs/internship-research-engineer-2080763480",
+      "title": "Internship - Research Engineer",
+      "companyName": "Smule,Inc.",
+      "applicationLink": "https://himalayas.app/companies/smule-inc/jobs/internship-research-engineer-2080763480?utm_source=api",
+      "employmentType": "Intern",
+      "seniority": ["Entry-level"],
+      "locationRestrictions": ["United States"],
+      "minSalary": null,
+      "maxSalary": null,
+      "salaryPeriod": "annual",
+      "currency": null,
+      "pubDate": 1792857397,
+      "description": "<p>Sample description.</p>"
+    },
+    {
+      "guid": "https://himalayas.app/companies/hiveway/jobs/forward-deployed-solutions-engineer-new-graduate-72651870",
+      "title": "Forward Deployed Solutions Engineer, New Graduate",
+      "companyName": "Hiveway",
+      "applicationLink": "https://himalayas.app/companies/hiveway/jobs/forward-deployed-solutions-engineer-new-graduate-72651870?utm_source=api",
+      "employmentType": "Full Time",
+      "seniority": ["Entry-level"],
+      "locationRestrictions": ["Canada"],
+      "minSalary": 85000,
+      "maxSalary": 105000,
+      "salaryPeriod": "annual",
+      "currency": "CAD",
+      "pubDate": 1792780577,
+      "description": "<p>Sample description.</p>"
+    }
+  ]
+}

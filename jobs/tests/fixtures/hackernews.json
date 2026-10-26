@@ -1,0 +1,86 @@
+{
+    "stories": {
+        "hitsPerPage": 5,
+        "nbHits": 2,
+        "page": 0,
+        "hits": [
+            {
+                "_tags": ["story", "author_whoishiring", "story_49922568", "ask_hn"],
+                "author": "whoishiring",
+                "created_at": "2026-10-01T15:02:07Z",
+                "objectID": "49922568",
+                "story_id": 49922568,
+                "title": "Ask HN: Who wants to be hired? (October 2026)"
+            },
+            {
+                "_tags": ["story", "author_whoishiring", "story_49922569", "ask_hn"],
+                "author": "whoishiring",
+                "created_at": "2026-10-01T15:02:07Z",
+                "objectID": "49922569",
+                "story_id": 49922569,
+                "title": "Ask HN: Who is hiring? (October 2026)"
+            }
+        ]
+    },
+    "comments": {
+        "hitsPerPage": 1000,
+        "nbHits": 6,
+        "page": 0,
+        "hits": [
+            {
+                "_tags": ["comment", "author_harborlight", "story_49922569"],
+                "author": "harborlight",
+                "comment_text": "Harborlight | <a href=\"https:&#x2F;&#x2F;harborlight.example\" rel=\"nofollow\">https:&#x2F;&#x2F;harborlight.example</a> | REMOTE (US or Canada) | Software Engineer | Full-Time<p>We build our backend with Python and Django.",
+                "created_at": "2026-10-14T21:05:06Z",
+                "objectID": "50095249",
+                "parent_id": 49922569,
+                "story_id": 49922569
+            },
+            {
+                "_tags": ["comment", "author_fieldnote", "story_49922569"],
+                "author": "fieldnote",
+                "comment_text": "Fieldnote (YC S18) | Backend Software Engineer | Remote (Global)<p>Our services are written in Python.",
+                "created_at": "2026-10-02T10:00:00Z",
+                "objectID": "49925489",
+                "parent_id": 49922569,
+                "story_id": 49922569
+            },
+            {
+                "_tags": ["comment", "author_kestrel", "story_49922569"],
+                "author": "kestrel",
+                "comment_text": "Kestrel Data | AI Engineer | REMOTE (UK)<p>Python and PyTorch.",
+                "created_at": "2026-10-05T12:51:37Z",
+                "objectID": "49961551",
+                "parent_id": 49922569,
+                "story_id": 49922569
+            },
+            {
+                "_tags": ["comment", "author_replier", "story_49922569"],
+                "author": "replier",
+                "comment_text": "Is this remote role open to Python beginners?",
+                "created_at": "2026-10-06T08:00:00Z",
+                "objectID": "49970000",
+                "parent_id": 49925489,
+                "story_id": 49922569
+            },
+            {
+                "_tags": ["comment", "author_ironbark", "story_49922569"],
+                "author": "ironbark",
+                "comment_text": "Ironbark | Rust Engineer | REMOTE (US)<p>Rust only.",
+                "created_at": "2026-10-03T09:00:00Z",
+                "objectID": "49930000",
+                "parent_id": 49922569,
+                "story_id": 49922569
+            },
+            {
+                "_tags": ["comment", "author_quillworks", "story_49922569"],
+                "author": "quillworks",
+                "comment_text": "Quillworks | Remote (US) | Full-time<p>We hire Python developers.",
+                "created_at": "2026-10-02T11:00:00Z",
+                "objectID": "49924974",
+                "parent_id": 49922569,
+                "story_id": 49922569
+            }
+        ]
+    }
+}

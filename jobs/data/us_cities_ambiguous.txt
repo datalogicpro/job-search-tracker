@@ -1,0 +1,24 @@
+# US cities with 100,000+ people whose name is also a place outside the US.
+# These count as US only when a US state code follows them, for example "Cambridge, MA".
+# One city per line. Lines starting with # are skipped.
+Alexandria
+Athens
+Birmingham
+Cambridge
+Columbia
+Durham
+Georgetown
+Kent
+Lancaster
+Lincoln
+Manchester
+Norfolk
+Odessa
+Ontario
+Richmond
+Salem
+Santa Maria
+Suffolk
+Toledo
+Vancouver
+Westminster

@@ -1,0 +1,60 @@
+{
+    "apiVersion": "2.2.19",
+    "jobCount": 3,
+    "hasMore": false,
+    "appliedFilters": {
+        "count": 50,
+        "tag": "python"
+    },
+    "jobs": [
+        {
+            "id": 150923,
+            "url": "https://jobicy.com/jobs/150923-junior-python-developer",
+            "jobSlug": "150923-junior-python-developer",
+            "jobTitle": "Junior Python Developer",
+            "companyName": "Harborview Health",
+            "companyLogo": "https://example.com/logos/harborview.webp",
+            "jobIndustry": ["Programming"],
+            "jobType": ["Full-Time"],
+            "jobGeo": "USA",
+            "jobLevel": "Entry-Level, Junior",
+            "jobExcerpt": "Build internal tools with Python.",
+            "jobDescription": "<p>Build internal tools with Python and Django.</p>",
+            "pubDate": "2026-10-24T03:45:06+00:00",
+            "salaryMin": 77000,
+            "salaryMax": 100000,
+            "salaryCurrency": "USD",
+            "salaryPeriod": "yearly"
+        },
+        {
+            "id": 156737,
+            "url": "https://jobicy.com/jobs/156737-network-engineer",
+            "jobSlug": "156737-network-engineer",
+            "jobTitle": "Network Engineer",
+            "companyName": "Coralnet Cloud",
+            "companyLogo": "https://example.com/logos/coralnet.webp",
+            "jobIndustry": ["DevOps & Infrastructure"],
+            "jobType": ["Full-Time"],
+            "jobGeo": "APAC",
+            "jobLevel": "Senior",
+            "jobExcerpt": "Run our Python network automation.",
+            "jobDescription": "<p>Run our Python network automation.</p>",
+            "pubDate": "2026-10-24T11:23:43+00:00"
+        },
+        {
+            "id": 149543,
+            "url": "https://jobicy.com/jobs/149543-python-engineer",
+            "jobSlug": "149543-python-engineer",
+            "jobTitle": "Python Engineer",
+            "companyName": "Openfield Software",
+            "companyLogo": "https://example.com/logos/openfield.webp",
+            "jobIndustry": ["Programming"],
+            "jobType": ["Full-Time"],
+            "jobGeo": "Anywhere",
+            "jobLevel": "Any",
+            "jobExcerpt": "Write open source Python.",
+            "jobDescription": "<p>Write open source Python.</p>",
+            "pubDate": "2026-10-24T03:35:32+00:00"
+        }
+    ]
+}

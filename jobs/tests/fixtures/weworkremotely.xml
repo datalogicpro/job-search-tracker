@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss">
+    <channel>
+        <title>We Work Remotely: Remote jobs in design, programming, marketing and more</title>
+        <link>https://weworkremotely.com/categories/remote-programming-jobs.rss</link>
+        <description>We Work Remotely: Remote jobs in design, programming, marketing and more</description>
+        <language>en-US</language>
+        <ttl>60</ttl>
+        <item>
+            <media:content url="https://example.com/logos/northwind.gif" type="image/png"/>
+            <title>Northwind Labs: Junior Python Developer</title>
+            <region>Anywhere in the World</region>
+            <category>Back-End Programming</category>
+            <description>&lt;p&gt;&lt;strong&gt;Headquarters:&lt;/strong&gt; Remote&lt;/p&gt;&lt;p&gt;Build REST APIs with Python and Django.&lt;/p&gt;</description>
+            <pubDate>Tue, 20 Oct 2026 16:05:12 +0000</pubDate>
+            <guid>https://weworkremotely.com/remote-jobs/northwind-labs-junior-python-developer</guid>
+            <link>https://weworkremotely.com/remote-jobs/northwind-labs-junior-python-developer</link>
+        </item>
+        <item>
+            <title>Fjord Apps: Framer Website Designer</title>
+            <region>Helsinki</region>
+            <category>Front-End Programming</category>
+            <description>&lt;p&gt;Design marketing pages in Framer.&lt;/p&gt;</description>
+            <pubDate>Mon, 19 Oct 2026 22:12:46 +0000</pubDate>
+            <guid>https://weworkremotely.com/remote-jobs/fjord-apps-framer-website-designer</guid>
+            <link>https://weworkremotely.com/remote-jobs/fjord-apps-framer-website-designer</link>
+        </item>
+        <item>
+            <title>Brightline Studio: Python Backend Engineer</title>
+            <region>Europe Only</region>
+            <category>Back-End Programming</category>
+            <description>&lt;p&gt;Maintain our Python services.&lt;/p&gt;</description>
+            <pubDate>Sun, 18 Oct 2026 09:30:00 +0000</pubDate>
+            <guid>https://weworkremotely.com/remote-jobs/brightline-studio-python-backend-engineer</guid>
+            <link>https://weworkremotely.com/remote-jobs/brightline-studio-python-backend-engineer</link>
+        </item>
+        <item>
+            <title>Python Automation Engineer</title>
+            <region>USA Only</region>
+            <category>Back-End Programming</category>
+            <description>&lt;p&gt;Write scripts that automate reports.&lt;/p&gt;</description>
+            <pubDate>Sat, 17 Oct 2026 14:00:00 +0000</pubDate>
+            <guid>https://weworkremotely.com/remote-jobs/python-automation-engineer</guid>
+            <link>https://weworkremotely.com/remote-jobs/python-automation-engineer</link>
+        </item>
+    </channel>
+</rss>
