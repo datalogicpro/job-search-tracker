@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Job(models.Model):
@@ -50,3 +51,24 @@ class Job(models.Model):
 
     def __str__(self):
         return f"{self.title} at {self.company} ({self.get_source_display()})"
+
+
+class Application(models.Model):
+    class Status(models.TextChoices):
+        APPLIED = "applied", "Applied"
+        INTERVIEWING = "interviewing", "Interviewing"
+        OFFER = "offer", "Offer"
+        REJECTED = "rejected", "Rejected"
+        WITHDRAWN = "withdrawn", "Withdrawn"
+
+    job = models.OneToOneField(Job, on_delete=models.PROTECT, related_name="application")
+    status = models.CharField(max_length=20, choices=Status.choices, default=Status.APPLIED)
+    applied_at = models.DateTimeField(default=timezone.now)
+    notes = models.TextField(blank=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-applied_at"]
+
+    def __str__(self):
+        return f"{self.job.title} at {self.job.company}: {self.get_status_display()}"

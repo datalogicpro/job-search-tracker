@@ -2,7 +2,7 @@
 
 A Django REST API that collects remote, entry-level Python developer jobs from
 free job APIs, filters out jobs that don't fit, serves the rest through one API,
-and emails a daily digest of new jobs.
+emails a daily digest of new jobs, and tracks the jobs you apply to.
 
 Built for finding remote, entry-level, self-taught-friendly Python backend jobs
 open to US residents, with startups (Y Combinator companies) marked.
@@ -16,6 +16,8 @@ open to US residents, with startups (Y Combinator companies) marked.
 - Marks Y Combinator companies and unpaid jobs, so you can filter on them
 - Daily digest email with each new job's details, a short preview, and its apply link,
   with every job sent only once
+- Application tracking: a signed "Mark as applied" link for each job in the digest,
+  and admin pages for status and notes
 - Emails never include the name of the computer they were sent from
 - Daily run on Windows through Task Scheduler, at most once a day, that starts and
   quits Docker Desktop by itself
@@ -29,6 +31,7 @@ open to US residents, with startups (Y Combinator companies) marked.
 - PostgreSQL 17 (Docker Compose)
 - requests with urllib3 Retry, defusedxml
 - Gmail SMTP through Django's `MAILERS` setting
+- Django's `signing` module for the "Mark as applied" links
 - Windows Task Scheduler and PowerShell for the daily run
 - pytest and pytest-django
 
@@ -65,6 +68,12 @@ Requires Python 3.13 and Docker.
    ```
    docker compose up -d
    python manage.py migrate
+   ```
+
+6. Create the admin sign-in, used for the admin pages:
+
+   ```
+   python manage.py createsuperuser
    ```
 
 ## Usage
@@ -135,6 +144,21 @@ Remove the scheduled task:
 Unregister-ScheduledTask -TaskName "job-search-tracker daily" -Confirm:$false
 ```
 
+## Application tracking
+
+Each job in the digest email has a **Mark as applied** link. The link opens a page
+with a **Mark as applied** button. Opening the link alone changes nothing, because
+email providers and security tools often open links in emails to scan them.
+Clicking the button records the application with today's date.
+
+The links are signed with Django's `signing` module and `DJANGO_SECRET_KEY`,
+so no sign-in is needed, and they expire after 30 days. They start with `SITE_URL`,
+so the server must be running at that address for them to work.
+
+Change an application's status (applied, interviewing, offer, rejected, withdrawn)
+or add notes in the admin pages at `/admin/`. Jobs with an application can't be
+deleted, so fetching and clearing jobs never removes your tracking.
+
 ## API
 
 | Endpoint | Description |
@@ -142,6 +166,7 @@ Unregister-ScheduledTask -TaskName "job-search-tracker daily" -Confirm:$false
 | `GET /api/jobs/` | List open jobs, newest first, 50 per page |
 | `GET /api/jobs/<id>/` | One job, with its full description |
 | `GET /health/` | `200` when the app and database are up, `503` when the database is down |
+| `GET, POST /applications/mark/<token>/` | The "Mark as applied" page and button |
 
 Query parameters for the list:
 
@@ -150,6 +175,7 @@ Query parameters for the list:
 | `source` | `?source=hackernews` | Jobs from one source |
 | `yc` | `?yc=true` | Only Y Combinator companies |
 | `unpaid` | `?unpaid=false` | Hide unpaid jobs |
+| `applied` | `?applied=false` | Hide jobs you applied to (`true` shows only those) |
 | `q` | `?q=django` | Search job titles |
 | `days` | `?days=7` | Jobs posted in the last N days |
 

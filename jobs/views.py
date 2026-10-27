@@ -1,10 +1,14 @@
 from datetime import timedelta
 
+from django.core import signing
+from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
+from django.views.decorators.http import require_http_methods
 from rest_framework import viewsets
 from rest_framework.exceptions import ValidationError
 
-from .models import Job
+from .applications import read_token
+from .models import Application, Job
 from .serializers import JobDetailSerializer, JobListSerializer
 
 
@@ -31,6 +35,12 @@ class JobViewSet(viewsets.ReadOnlyModelViewSet):
         elif unpaid == "false":
             queryset = queryset.filter(is_unpaid=False)
 
+        applied = params.get("applied")
+        if applied == "true":
+            queryset = queryset.filter(application__isnull=False)
+        elif applied == "false":
+            queryset = queryset.filter(application__isnull=True)
+
         search = params.get("q")
         if search:
             queryset = queryset.filter(title__icontains=search)
@@ -43,3 +53,21 @@ class JobViewSet(viewsets.ReadOnlyModelViewSet):
             queryset = queryset.filter(posted_at__gte=since)
 
         return queryset
+
+
+@require_http_methods(["GET", "POST"])
+def mark_applied(request, token):
+    template = "jobs/mark_applied.html"
+    try:
+        job_id = read_token(token)
+    except signing.SignatureExpired:
+        return render(request, template, {"error": "This link has expired."}, status=400)
+    except signing.BadSignature:
+        return render(request, template, {"error": "This link is not valid."}, status=400)
+
+    job = get_object_or_404(Job, pk=job_id)
+    application = Application.objects.filter(job=job).first()
+    if request.method == "POST" and application is None:
+        application, _ = Application.objects.get_or_create(job=job)
+
+    return render(request, template, {"job": job, "application": application})

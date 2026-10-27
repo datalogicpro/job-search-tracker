@@ -6,6 +6,7 @@ from django.core.management.base import BaseCommand, CommandError
 from django.db.models import F
 from django.utils import timezone
 
+from jobs.applications import mark_applied_url
 from jobs.filters import plain_text
 from jobs.models import Job
 
@@ -53,6 +54,7 @@ def format_job(number: int, job: Job) -> str:
     if preview:
         lines.append(f"   Preview: {preview}")
     lines.append(f"   Apply: {job.url}")
+    lines.append(f"   Mark as applied: {mark_applied_url(job)}")
     return "\n".join(lines)
 
 

@@ -28,6 +28,13 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 - `digest_sent_at` field that records when a job was sent in a digest
 - Email backend that uses a fixed host name instead of the computer's name
   when greeting the mail server and in each Message-ID
+- `Application` model with status, applied date, and notes; jobs with an
+  application are protected from deletion
+- Signed "Mark as applied" link for each job in the digest, opening a confirm page
+  with a button, and expiring after 30 days
+- `SITE_URL` setting for the links in the digest email
+- Admin pages for applications, and an "Applied" column on the jobs list
+- `applied` filter on `/api/jobs/`
 - `scripts/run_daily.ps1` that runs `fetch_jobs` and `send_digest` at most once a day,
   starts and quits Docker Desktop when needed, and writes daily log files
 - `scripts/register_task.ps1` that registers the Windows scheduled task for the daily run,
@@ -37,7 +44,7 @@ and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 - Structured JSON logging, with a run ID on every log line from a fetch run
 - Text fields cut to their database limits before saving
 - Tests for every source, the filters, the location check, logging,
-  the health endpoint, the email backend, and the digest
+  the health endpoint, the email backend, the digest, and application tracking
 - `.env.example`, `README.md`, and this changelog
 
 ### Changed
