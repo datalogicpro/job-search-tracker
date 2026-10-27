@@ -3,8 +3,9 @@ import uuid
 from dataclasses import asdict
 
 from django.core.management.base import BaseCommand
-from django.db import transaction
+from django.db import models, transaction
 
+from config.log_format import run_id_var
 from jobs.filters import is_unpaid, rejection_reason
 from jobs.models import Job
 from jobs.sources import SOURCES
@@ -14,7 +15,11 @@ from jobs.yc import fetch_yc_company_names, normalize_company
 logger = logging.getLogger(__name__)
 
 SOURCE_NAMES = [source.name for source in SOURCES]
-FIELD_LIMITS = {"title": 300, "company": 300, "location": 300, "url": 1000}
+FIELD_LIMITS = {
+    field.name: field.max_length
+    for field in Job._meta.concrete_fields
+    if isinstance(field, models.CharField) and field.max_length
+}
 
 
 class Command(BaseCommand):
@@ -29,9 +34,16 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         run_id = uuid.uuid4().hex[:12]
+        token = run_id_var.set(run_id)
+        try:
+            self.run(run_id, options["source"])
+        finally:
+            run_id_var.reset(token)
+
+    def run(self, run_id: str, source_name: str | None) -> None:
         session = build_session()
         yc_names = fetch_yc_company_names(session)
-        selected = [s for s in SOURCES if options["source"] in (None, s.name)]
+        selected = [s for s in SOURCES if source_name in (None, s.name)]
         totals = {"fetched": 0, "saved": 0, "rejected": 0, "failed_sources": 0}
 
         logger.info("fetch run started", extra={"run_id": run_id, "sources": len(selected)})
@@ -86,7 +98,8 @@ class Command(BaseCommand):
             source = fields.pop("source")
             external_id = fields.pop("external_id")
             for name, limit in FIELD_LIMITS.items():
-                fields[name] = (fields[name] or "")[:limit]
+                if name in fields:
+                    fields[name] = (fields[name] or "")[:limit]
             fields["is_yc_company"] = normalize_company(job.company) in yc_names
             fields["is_unpaid"] = is_unpaid(job)
 

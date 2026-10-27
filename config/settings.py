@@ -86,9 +86,29 @@ ALLOW_DEGREE_A_PLUS = env.bool("ALLOW_DEGREE_A_PLUS", default=True)
 
 LOG_LEVEL = env("LOG_LEVEL", default="INFO")
 
+MAILERS = {
+    "default": {
+        "BACKEND": "config.email_backend.FixedHostnameEmailBackend",
+        "OPTIONS": {
+            "host": env("EMAIL_HOST", default="smtp.gmail.com"),
+            "port": env.int("EMAIL_PORT", default=587),
+            "username": env("EMAIL_HOST_USER", default=""),
+            "password": env("EMAIL_HOST_PASSWORD", default=""),
+            "use_tls": True,
+            "timeout": 15,
+            "local_hostname": env("EMAIL_LOCAL_HOSTNAME", default="job-search-tracker"),
+        },
+    },
+}
+DEFAULT_FROM_EMAIL = env("EMAIL_HOST_USER", default="")
+DIGEST_TO = env("DIGEST_TO", default="")
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
+    "filters": {
+        "run_id": {"()": "config.log_format.RunIdFilter"},
+    },
     "formatters": {
         "json": {"()": "config.log_format.JsonFormatter"},
     },
@@ -96,6 +116,7 @@ LOGGING = {
         "console": {
             "class": "logging.StreamHandler",
             "formatter": "json",
+            "filters": ["run_id"],
         },
     },
     "root": {

@@ -33,6 +33,7 @@ class Job(models.Model):
     first_seen_at = models.DateTimeField(auto_now_add=True)
     last_seen_at = models.DateTimeField(auto_now=True)
     closed_at = models.DateTimeField(null=True, blank=True)
+    digest_sent_at = models.DateTimeField(null=True, blank=True)
 
     class Meta:
         ordering = ["-posted_at"]
@@ -49,4 +50,3 @@ class Job(models.Model):
 
     def __str__(self):
         return f"{self.title} at {self.company} ({self.get_source_display()})"
-    

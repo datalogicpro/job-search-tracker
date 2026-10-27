@@ -1,5 +1,7 @@
 from datetime import datetime, timezone
 
+import pytest
+
 from jobs.filters import is_unpaid, rejection_reason
 from jobs.sources.base import JobData
 
@@ -70,6 +72,17 @@ def test_keeps_jr_to_sr_range_title():
     assert rejection_reason(job) is None
 
 
+def test_rejects_senior_level():
+    job = make_job(title="Python Developer", seniority="Senior")
+    assert rejection_reason(job) == "senior level"
+
+
+@pytest.mark.parametrize("seniority", ["Junior, Senior", "Entry-Level, Senior", "Any", ""])
+def test_keeps_mixed_or_open_level(seniority):
+    job = make_job(title="Python Developer", seniority=seniority)
+    assert rejection_reason(job) is None
+
+
 def test_rejects_sales_engineer():
     job = make_job(title="Arity - Sales Engineer Intern")
     assert rejection_reason(job) == "not an eligible role"
@@ -135,6 +148,23 @@ def test_rejects_degree_a_plus_when_not_allowed(settings):
     settings.ALLOW_DEGREE_A_PLUS = False
     job = make_job(description="Python skills. A bachelor's degree is a plus.")
     assert rejection_reason(job) == "degree required"
+
+
+@pytest.mark.parametrize(
+    "description",
+    [
+        "Python skills. Active TS/SCI clearance required.",
+        "<p>Python skills.</p><p>Must hold a Secret clearance.</p>",
+    ],
+)
+def test_rejects_security_clearance_required(description):
+    job = make_job(description=description)
+    assert rejection_reason(job) == "security clearance required"
+
+
+def test_keeps_no_clearance_required():
+    job = make_job(description="Python skills. No security clearance required.")
+    assert rejection_reason(job) is None
 
 
 def test_unpaid_in_title_is_marked_and_kept():

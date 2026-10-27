@@ -38,6 +38,14 @@ DEGREE_PATTERN = re.compile(
     re.IGNORECASE,
 )
 DEGREE_EXCEPTION_PATTERN = re.compile(r"a plus|nice to have", re.IGNORECASE)
+CLEARANCE_PATTERN = re.compile(
+    r"\b(ts/sci|(active|current|secret|top secret|security|government|public trust)\s+clearance)\b",
+    re.IGNORECASE,
+)
+NO_CLEARANCE_PATTERN = re.compile(
+    r"\bno\s+(security\s+)?clearance\b|\bclearance\s+(is\s+)?not\s+required\b",
+    re.IGNORECASE,
+)
 TAG_PATTERN = re.compile(r"<[^>]+>")
 DEGREE_CONTEXT_BEFORE = 100
 DEGREE_CONTEXT_AFTER = 150
@@ -59,8 +67,13 @@ def requires_degree(job: JobData) -> bool:
     return False
 
 
-def is_senior_only_title(title: str) -> bool:
-    return bool(SENIOR_TITLE_PATTERN.search(title) and not JUNIOR_TITLE_PATTERN.search(title))
+def requires_clearance(job: JobData) -> bool:
+    text = plain_text(f"{job.title} {job.description}")
+    return bool(CLEARANCE_PATTERN.search(text) and not NO_CLEARANCE_PATTERN.search(text))
+
+
+def is_senior_only(text: str) -> bool:
+    return bool(SENIOR_TITLE_PATTERN.search(text) and not JUNIOR_TITLE_PATTERN.search(text))
 
 
 def rejection_reason(job: JobData) -> str | None:
@@ -77,8 +90,10 @@ def rejection_reason(job: JobData) -> str | None:
     if any(blocked in company for blocked in BLOCKED_COMPANIES):
         return "blocked company"
 
-    if is_senior_only_title(job.title):
+    if is_senior_only(job.title):
         return "senior title"
+    if is_senior_only(job.seniority):
+        return "senior level"
     if INELIGIBLE_TITLE_PATTERN.search(job.title):
         return "not an eligible role"
 
@@ -90,6 +105,8 @@ def rejection_reason(job: JobData) -> str | None:
 
     if requires_degree(job):
         return "degree required"
+    if requires_clearance(job):
+        return "security clearance required"
     return None
 
 
